@@ -8,12 +8,13 @@ from sklearn.preprocessing import LabelEncoder
 df = pd.read_csv("data/nigerian_student_performance_advanced.csv")
 
 # Features to use
-features = [
+# Ensure correct feature order for prediction
+input_df = input_df[[
     'gender', 'age', 'class_level', 'attendance_rate',
     'math_score', 'english_score', 'science_score',
     'prev_math_score', 'prev_english_score', 'prev_science_score',
     'study_hours', 'parental_support', 'food_security'
-]
+]]
 
 X = df[features]
 y = df['at_risk']
